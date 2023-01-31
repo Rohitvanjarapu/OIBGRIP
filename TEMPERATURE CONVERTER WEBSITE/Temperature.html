@@ -1,0 +1,95 @@
+<html>
+<head>
+	<title>Temperature Converter</title>
+
+	<style>
+		body{
+			display: flex;
+	        justify-content:center;
+	        align-items:center;
+	        height:100vh;
+	        background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("https://i.ibb.co/5GM3c1r/landscape-weather-evening-sunset-dawn-golden-hour-dark-clouds-dramatic-sky-android-iphone-hd-wallpap.webp");
+	        background-repeat: no-repeat;
+	        background-position: center;
+	        background-size: cover;
+		}
+		form{
+			padding-top:3%;
+	        padding-bottom:3%;
+	        padding-left:3%;
+	        padding-right:3%;
+	        border:solid 1px black;
+	        border-radius: 25px;
+	        background-color: rgba(90, 88, 88, 0.404);
+		}
+		.o{
+			height: 50px;
+	        width: 200px;
+	        border:none;
+	        background-color: transparent;
+	        resize: none;
+	        outline: none;
+
+		}
+		#type{
+			width: 150px;
+			height: 30px;
+            background-color: transparent;
+		}
+		input::-webkit-outer-spin-button,
+		input::-webkit-inner-spin-button {
+		  -webkit-appearance: none;
+  			margin: 0;
+		}
+		.btn{
+			background-color: black;
+	        color:white;
+	        height: 50px;
+	        width: 110px;
+	        border-radius:20px;
+		}
+
+	</style>
+	</head>
+	<body >
+		<form>
+			<h1>Temperature Converter</h1>
+			<div id="con">
+				<!-- <input type="number" placeholder="temp" id="num"> -->
+				<fieldset>
+		          <legend align="left">Enter Degree</legend>
+		          <input type="number" step="any" placeholder="temp" id="num" class="o">
+		        </fieldset>
+      			<br>
+				<h3>Type</h3>
+				<select id="type">
+					<option>Fahrenheit</option>
+					<option>Celsius</option>
+				</select>
+			</div>
+			<br><br>
+			<h3>Result</h3>
+			<div class="res" id="res"></div><br>
+			<div align="center">
+			<button onclick="myfun()" type="button" class="btn" >convert</button></div>
+
+		</form>
+	</body>
+	<script type="text/javascript">
+		
+		function myfun(){
+			let a=document.getElementById("num").value;
+			let b=document.getElementById("type").value;
+			let c;
+			if(b=="Fahrenheit"){
+				c=(a*(9/5))+32;
+				document.getElementById("res").innerHTML=c+"\u00B0F";
+			}
+			if(b=="Celsius"){
+				c=((5/9)*(a-32));
+				document.getElementById("res").innerHTML=c+"\u00B0C";
+			}
+			
+		}
+	</script>
+</html>
